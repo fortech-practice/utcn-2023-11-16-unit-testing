@@ -8,14 +8,16 @@ class GreetingMessageGeneratorTest {
 
     @Test
     void generateGreetingMessageForStranger() {
-        GreetingMessageGenerator generator = new GreetingMessageGenerator();
+        Clock clock = new Clock();
+        GreetingMessageGenerator generator = new GreetingMessageGenerator(clock);
         String message = generator.generateGreetingMessage();
         assertEquals("Good evening, stranger!", message);
     }
 
     @Test
     void generateGreetingMessageForJohnDoe() {
-        GreetingMessageGenerator generator = new GreetingMessageGenerator();
+        Clock clock = new Clock();
+        GreetingMessageGenerator generator = new GreetingMessageGenerator(clock);
         String message = generator.generateGreetingMessage("John Doe");
         assertEquals("Good evening, John Doe!", message);
     }

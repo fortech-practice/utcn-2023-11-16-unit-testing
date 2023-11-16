@@ -1,8 +1,12 @@
 package ro.fortech.practice;
 
-import java.util.Calendar;
-
 public class GreetingMessageGenerator {
+    private final Clock clock;
+
+    public GreetingMessageGenerator(Clock clock) {
+        this.clock = clock;
+    }
+
     public String generateGreetingMessage() {
         return generateGreetingMessage(null);
     }
@@ -16,7 +20,7 @@ public class GreetingMessageGenerator {
     }
 
     private String getMomentOfDay() {
-        int hourOfDay = getHourOfDay();
+        int hourOfDay = clock.getHourOfDay();
         if ((4 <= hourOfDay) && (hourOfDay < 12)) {
             return "morning";
         }
@@ -27,9 +31,5 @@ public class GreetingMessageGenerator {
             return "evening";
         }
         return "night";
-    }
-
-    private int getHourOfDay() {
-        return Calendar.getInstance().get(Calendar.HOUR_OF_DAY);
     }
 }

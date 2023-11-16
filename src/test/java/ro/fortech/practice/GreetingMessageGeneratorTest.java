@@ -8,7 +8,7 @@ class GreetingMessageGeneratorTest {
 
     @Test
     void generateGreetingMessageForStranger() {
-        Clock clock = new Clock();
+        Clock clock = new FixedEveningClock();
         GreetingMessageGenerator generator = new GreetingMessageGenerator(clock);
         String message = generator.generateGreetingMessage();
         assertEquals("Good evening, stranger!", message);
@@ -16,7 +16,7 @@ class GreetingMessageGeneratorTest {
 
     @Test
     void generateGreetingMessageForJohnDoe() {
-        Clock clock = new Clock();
+        Clock clock = new FixedEveningClock();
         GreetingMessageGenerator generator = new GreetingMessageGenerator(clock);
         String message = generator.generateGreetingMessage("John Doe");
         assertEquals("Good evening, John Doe!", message);

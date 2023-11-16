@@ -2,6 +2,9 @@ package ro.fortech.practice;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+        String personName = "John Doe";
+        GreetingMessageGenerator generator = new GreetingMessageGenerator();
+        String message = generator.generateGreetingMessage(personName);
+        System.out.println(message);
     }
 }

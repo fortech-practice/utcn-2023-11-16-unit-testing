@@ -7,16 +7,16 @@ import static org.junit.jupiter.api.Assertions.*;
 class GreetingMessageGeneratorTest {
 
     @Test
-    void generateGreetingMessage() {
+    void generateGreetingMessageForStranger() {
         GreetingMessageGenerator generator = new GreetingMessageGenerator();
         String message = generator.generateGreetingMessage();
-        assertEquals("Hello, stranger!", message);
+        assertEquals("Good evening, stranger!", message);
     }
 
     @Test
     void generateGreetingMessageForJohnDoe() {
         GreetingMessageGenerator generator = new GreetingMessageGenerator();
         String message = generator.generateGreetingMessage("John Doe");
-        assertEquals("Hello, John Doe!", message);
+        assertEquals("Good evening, John Doe!", message);
     }
 }
